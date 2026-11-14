@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://csyqyu48utvtv"]
+
+[ext_resource type="Script" path="res://Script/borrador.gd" id="1_scr"]
+[ext_resource type="Texture2D" path="res://Personajes/Borrador/borrador_idle.png" id="2_idle"]
+[ext_resource type="Texture2D" path="res://Personajes/Borrador/borrador_preparar.png" id="3_prep"]
+[ext_resource type="Texture2D" path="res://Personajes/Borrador/borrador_embestida_1.png" id="4_e1"]
+[ext_resource type="Texture2D" path="res://Personajes/Borrador/borrador_embestida_2.png" id="5_e2"]
+[ext_resource type="Texture2D" path="res://Personajes/Borrador/borrador_aturdido.png" id="6_atu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c"]
+size = Vector2(56, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d"]
+size = Vector2(62, 62)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_idle")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_prep")
+}],
+"loop": true,
+"name": &"preparar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_e1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_e2")
+}],
+"loop": true,
+"name": &"embestida",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_atu")
+}],
+"loop": true,
+"name": &"aturdido",
+"speed": 5.0
+}]
+
+[node name="Borrador" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_scr")
+
+[node name="Anim" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_b")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_c")
+
+[node name="ZonaDano" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonaDano"]
+shape = SubResource("RectangleShape2D_d")

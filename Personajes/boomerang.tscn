@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://gibqd64uww4m"]
+
+[ext_resource type="Texture2D" uid="uid://dfrisvbe4mgme" path="res://Personajes/Boomerang .png" id="2_aycfn"]
+[ext_resource type="Script" uid="uid://d0yjsg6i4k5pk" path="res://Script/boomerang.gd" id="2_scr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b"]
+radius = 30.0
+
+[node name="Boomerang" type="Area2D" unique_id=2071395344]
+z_index = 10
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("2_scr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=834137279]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_aycfn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=878111824]
+shape = SubResource("CircleShape2D_b")

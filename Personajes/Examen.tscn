@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b8klqykeqspol"]
+
+[ext_resource type="Texture2D" uid="uid://jm4uptfs4rpg" path="res://Personajes/Papel (1).png" id="2_82iv1"]
+[ext_resource type="Script" uid="uid://u26tkn0yu32j" path="res://Script/enemigo.gd" id="2_scr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c"]
+size = Vector2(56, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d"]
+size = Vector2(62, 62)
+
+[node name="Examen" type="CharacterBody2D" unique_id=195983774]
+collision_layer = 2
+script = ExtResource("2_scr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1682384667]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_82iv1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1147785864]
+shape = SubResource("RectangleShape2D_c")
+
+[node name="ZonaDano" type="Area2D" parent="." unique_id=1766163791]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonaDano" unique_id=1913046119]
+shape = SubResource("RectangleShape2D_d")
