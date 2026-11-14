@@ -1,0 +1,243 @@
+[gd_scene format=3 uid="uid://cpriqrs531g1j"]
+
+[ext_resource type="Texture2D" uid="uid://ddlww0undlu66" path="res://Escenarios/WhatsApp Image 2026-11-14 at 11.17.07 (2).jpeg" id="1_bg"]
+[ext_resource type="PackedScene" uid="uid://d0x2kedvm4m4q" path="res://Personajes/Jugador.tscn" id="2_jug"]
+[ext_resource type="PackedScene" uid="uid://b8klqykeqspol" path="res://Personajes/Examen.tscn" id="3_exa"]
+[ext_resource type="Script" uid="uid://bsw3mqykyjg62" path="res://Script/nivel.gd" id="4_niv"]
+[ext_resource type="PackedScene" uid="uid://csyqyu48utvtv" path="res://Personajes/borrador.tscn" id="5_0hkg4"]
+[ext_resource type="PackedScene" path="res://Personajes/Resorte.tscn" id="7_res"]
+[ext_resource type="PackedScene" path="res://Personajes/Plataforma.tscn" id="8_pla"]
+[ext_resource type="PackedScene" uid="uid://csyqyu48utvtv" path="res://Personajes/borrador.tscn" id="9_bor"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_suelo0"]
+size = Vector2(1300, 300)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_suelo1"]
+size = Vector2(780, 300)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_suelo2"]
+size = Vector2(600, 300)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_suelo3"]
+size = Vector2(800, 300)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pared"]
+size = Vector2(60, 1600)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_meta"]
+size = Vector2(100, 700)
+
+[node name="Nivel2" type="Node2D" unique_id=1532662508]
+script = ExtResource("4_niv")
+siguiente_nivel = "res://Niveles/Nivel3.tscn"
+
+[node name="Fondo" type="Sprite2D" parent="." unique_id=1514804027]
+z_index = -10
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("1_bg")
+centered = false
+
+[node name="Fondo2" type="Sprite2D" parent="." unique_id=1358641264]
+z_index = -10
+position = Vector2(972, 0)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("1_bg")
+centered = false
+
+[node name="Fondo3" type="Sprite2D" parent="." unique_id=1790033822]
+z_index = -10
+position = Vector2(1944, 0)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("1_bg")
+centered = false
+
+[node name="Fondo4" type="Sprite2D" parent="." unique_id=1514984943]
+z_index = -10
+position = Vector2(2916, 0)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("1_bg")
+centered = false
+
+[node name="Fondo5" type="Sprite2D" parent="." unique_id=451202323]
+z_index = -10
+position = Vector2(3888, 0)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("1_bg")
+centered = false
+
+[node name="Fondo6" type="Sprite2D" parent="." unique_id=700230923]
+z_index = -10
+position = Vector2(4860, 0)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("1_bg")
+centered = false
+
+[node name="Suelo" type="StaticBody2D" parent="." unique_id=1047507913]
+
+[node name="Tramo1" type="CollisionShape2D" parent="Suelo"]
+position = Vector2(350.0, 660)
+shape = SubResource("RectangleShape2D_suelo0")
+
+[node name="Visual1" type="ColorRect" parent="Suelo"]
+mouse_filter = 2
+offset_left = -300.0
+offset_top = 510.0
+offset_right = 1000.0
+offset_bottom = 540.0
+color = Color(0.2, 0.12, 0.06, 0.85)
+
+[node name="Tramo2" type="CollisionShape2D" parent="Suelo"]
+position = Vector2(1610.0, 660)
+shape = SubResource("RectangleShape2D_suelo1")
+
+[node name="Visual2" type="ColorRect" parent="Suelo"]
+mouse_filter = 2
+offset_left = 1220.0
+offset_top = 510.0
+offset_right = 2000.0
+offset_bottom = 540.0
+color = Color(0.2, 0.12, 0.06, 0.85)
+
+[node name="Tramo3" type="CollisionShape2D" parent="Suelo"]
+position = Vector2(2800.0, 660)
+shape = SubResource("RectangleShape2D_suelo2")
+
+[node name="Visual3" type="ColorRect" parent="Suelo"]
+mouse_filter = 2
+offset_left = 2500.0
+offset_top = 510.0
+offset_right = 3100.0
+offset_bottom = 540.0
+color = Color(0.2, 0.12, 0.06, 0.85)
+
+[node name="Tramo4" type="CollisionShape2D" parent="Suelo"]
+position = Vector2(3900.0, 660)
+shape = SubResource("RectangleShape2D_suelo3")
+
+[node name="Visual4" type="ColorRect" parent="Suelo"]
+mouse_filter = 2
+offset_left = 3500.0
+offset_top = 510.0
+offset_right = 4300.0
+offset_bottom = 540.0
+color = Color(0.2, 0.12, 0.06, 0.85)
+
+[node name="ParedIzq" type="StaticBody2D" parent="." unique_id=2034904243]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParedIzq" unique_id=284833953]
+position = Vector2(-30, 300)
+shape = SubResource("RectangleShape2D_pared")
+
+[node name="ParedDer" type="StaticBody2D" parent="." unique_id=1394459868]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParedDer" unique_id=315570820]
+position = Vector2(4030, 300)
+shape = SubResource("RectangleShape2D_pared")
+
+[node name="Meta" type="Area2D" parent="." unique_id=980024203]
+position = Vector2(3850, 300)
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Meta" unique_id=1864960102]
+shape = SubResource("RectangleShape2D_meta")
+
+[node name="Aviso" type="ColorRect" parent="Meta" unique_id=907304727]
+offset_left = -50.0
+offset_top = -350.0
+offset_right = 50.0
+offset_bottom = 350.0
+color = Color(1, 0.85, 0.2, 0.35)
+
+[node name="Label" type="Label" parent="Meta" unique_id=293775839]
+offset_left = -50.0
+offset_top = 60.0
+offset_right = 50.0
+offset_bottom = 83.0
+text = "META"
+horizontal_alignment = 1
+
+[node name="Personaje" parent="." unique_id=1209699849 instance=ExtResource("2_jug")]
+position = Vector2(150, 450)
+
+[node name="Plataforma1" parent="." instance=ExtResource("8_pla")]
+position = Vector2(1110, 360)
+ancho = 160.0
+
+[node name="Plataforma2" parent="." instance=ExtResource("8_pla")]
+position = Vector2(1650, 350)
+ancho = 200.0
+
+[node name="Plataforma3" parent="." instance=ExtResource("8_pla")]
+position = Vector2(2250, 300)
+ancho = 200.0
+
+[node name="Plataforma4" parent="." instance=ExtResource("8_pla")]
+position = Vector2(3300, 330)
+ancho = 200.0
+
+[node name="Resorte1" parent="." instance=ExtResource("7_res")]
+position = Vector2(1900, 510)
+fuerza = 820.0
+
+[node name="Resorte2" parent="." instance=ExtResource("7_res")]
+position = Vector2(3000, 510)
+fuerza = 900.0
+direccion = Vector2(1, -1.6)
+
+[node name="Examen1" parent="." instance=ExtResource("3_exa")]
+position = Vector2(600, 470)
+velocidad = 90.0
+rango = 120.0
+espera_min = 3.0
+espera_max = 5.0
+velocidad_ataque = 320.0
+
+[node name="Examen2" parent="." instance=ExtResource("3_exa")]
+position = Vector2(1450, 470)
+velocidad = 100.0
+rango = 80.0
+espera_min = 3.0
+espera_max = 5.0
+velocidad_ataque = 320.0
+
+[node name="Borrador3" parent="." instance=ExtResource("9_bor")]
+position = Vector2(1700, 470)
+velocidad = 100.0
+rango = 100.0
+espera_min = 3.0
+espera_max = 5.0
+velocidad_ataque = 320.0
+
+[node name="Examen4" parent="." instance=ExtResource("3_exa")]
+position = Vector2(2750, 470)
+velocidad = 110.0
+rango = 100.0
+espera_min = 3.0
+espera_max = 5.0
+velocidad_ataque = 320.0
+
+[node name="Borrador5" parent="." instance=ExtResource("9_bor")]
+position = Vector2(3700, 470)
+velocidad = 110.0
+rango = 100.0
+espera_min = 3.0
+espera_max = 5.0
+velocidad_ataque = 320.0
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=286877518]
+
+[node name="Titulo" type="Label" parent="HUD" unique_id=221567852]
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 1100.0
+offset_bottom = 35.0
+text = "Nivel 2  |  Flechas: mover  |  Espacio: saltar  |  0: boomerang  |  Resortes rojos = rebote  |  Cuidado: los enemigos embisten"
+
+[node name="Mensaje" type="Label" parent="HUD" unique_id=770680880]
+visible = false
+offset_left = 176.0
+offset_top = 280.0
+offset_right = 976.0
+offset_bottom = 340.0
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1

@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://b2w0lfp25di2p"]
+
+[ext_resource type="Texture2D" uid="uid://c3xyys2jxgpjj" path="res://Escenarios/WhatsApp Image 2026-11-14 at 14.02.12.jpeg" id="1_fondo"]
+[ext_resource type="Script" uid="uid://dmopjto4fx4ty" path="res://Script/menu.gd" id="1_menu"]
+[ext_resource type="Texture2D" uid="uid://bak7h7cyupmvm" path="res://Botones/WhatsApp_Image_2026-11-14_at_11.48.17-removebg-preview.png" id="2_5k5fk"]
+[ext_resource type="Texture2D" uid="uid://balar76yvps8s" path="res://Botones/WhatsApp_Image_2026-11-14_at_12.01.18-removebg-preview.png" id="3_wdymf"]
+
+[node name="Node2D" type="Node2D" unique_id=531421570]
+script = ExtResource("1_menu")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1954309037]
+
+[node name="CanvasModulate" type="Sprite2D" parent="CanvasLayer" unique_id=896123209]
+position = Vector2(582.00006, 357)
+scale = Vector2(1.5567569, 1.735577)
+texture = ExtResource("1_fondo")
+
+[node name="Button" type="Button" parent="CanvasLayer/CanvasModulate" unique_id=713222640]
+offset_left = 166.3715
+offset_top = -138.85872
+offset_right = 617.3715
+offset_bottom = 139.14128
+scale = Vector2(0.3784913, 0.2997666)
+pivot_offset = Vector2(3.8541565, 0)
+icon = ExtResource("2_5k5fk")
+
+[node name="Button2" type="Button" parent="CanvasLayer/CanvasModulate" unique_id=1678965493]
+offset_left = 185.64232
+offset_top = -19.013851
+offset_right = 636.64233
+offset_bottom = 258.98615
+rotation = -0.01710724
+scale = Vector2(0.3784913, 0.2997666)
+pivot_offset = Vector2(3.8541565, 0)
+icon = ExtResource("3_wdymf")
+
+[node name="Label" type="Label" parent="CanvasLayer/CanvasModulate" unique_id=1761450458]
+offset_left = -239.60074
+offset_top = -97.37396
+offset_right = -196.60074
+offset_bottom = -74.37396
+text = "R.E.M"

@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://d0x2kedvm4m4q"]
+
+[ext_resource type="Script" uid="uid://4uoxjf3j0a44" path="res://Script/jugador.gd" id="2_scr"]
+[ext_resource type="Texture2D" path="res://Personajes/Prota/quieto_1.png" id="1_quieto1"]
+[ext_resource type="Texture2D" path="res://Personajes/Prota/quieto_2.png" id="2_quieto2"]
+[ext_resource type="Texture2D" path="res://Personajes/Prota/quieto_3.png" id="3_quieto3"]
+[ext_resource type="Texture2D" path="res://Personajes/Prota/quieto_4.png" id="4_quieto4"]
+[ext_resource type="Texture2D" path="res://Personajes/Prota/caminar_1.png" id="5_caminar1"]
+[ext_resource type="Texture2D" path="res://Personajes/Prota/caminar_2.png" id="6_caminar2"]
+[ext_resource type="Texture2D" path="res://Personajes/Prota/caminar_3.png" id="7_caminar3"]
+[ext_resource type="Texture2D" path="res://Personajes/Prota/caminar_4.png" id="8_caminar4"]
+[ext_resource type="Texture2D" path="res://Personajes/Prota/caminar_5.png" id="9_caminar5"]
+[ext_resource type="Texture2D" path="res://Personajes/Prota/caminar_6.png" id="10_caminar6"]
+[ext_resource type="Texture2D" path="res://Personajes/Prota/caminar_7.png" id="11_caminar7"]
+[ext_resource type="Texture2D" path="res://Personajes/Prota/caminar_8.png" id="12_caminar8"]
+[ext_resource type="Texture2D" path="res://Personajes/Prota/caminar_9.png" id="13_caminar9"]
+[ext_resource type="Texture2D" path="res://Personajes/Prota/salto_1.png" id="14_salto1"]
+[ext_resource type="Texture2D" path="res://Personajes/Prota/salto_2.png" id="15_salto2"]
+[ext_resource type="Texture2D" path="res://Personajes/Prota/salto_3.png" id="16_salto3"]
+[ext_resource type="Texture2D" path="res://Personajes/Prota/agachado_1.png" id="17_agachado1"]
+[ext_resource type="Texture2D" path="res://Personajes/Prota/agachado_2.png" id="18_agachado2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p"]
+radius = 30.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_quieto1")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("2_quieto2")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("3_quieto3")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("4_quieto4")
+}],
+"loop": true,
+"name": &"quieto",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_caminar1")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("6_caminar2")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("7_caminar3")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("8_caminar4")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("9_caminar5")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("10_caminar6")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("11_caminar7")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("12_caminar8")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("13_caminar9")
+}],
+"loop": true,
+"name": &"avanzar",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_salto1")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("15_salto2")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("16_salto3")
+}],
+"loop": false,
+"name": &"salto",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_agachado1")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("18_agachado2")
+}],
+"loop": false,
+"name": &"agachado",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_salto3")
+}],
+"loop": false,
+"name": &"caer",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("2_scr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_p")
+animation = &"quieto"
+autoplay = "quieto"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_p")
+
+[node name="Camera2D" type="Camera2D" parent="."]
